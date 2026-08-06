@@ -1,0 +1,41 @@
+Arabic Learning - macOS build and validation handoff
+
+Prerequisites
+1. macOS with a current Xcode release that can build iOS 17 targets.
+2. Xcode command-line tools selected:
+   sudo xcode-select -s /Applications/Xcode.app
+3. XcodeGen:
+   brew install xcodegen
+
+Generate the project
+1. Open Terminal in this folder.
+2. Run:
+   xcodegen generate
+3. Open:
+   open ArabicLearning.xcodeproj
+
+Local simulator build and tests
+1. List available simulators:
+   xcrun simctl list devices available
+2. Replace the destination name below with an installed iPhone simulator:
+   xcodebuild -project ArabicLearning.xcodeproj -scheme ArabicLearning -destination "platform=iOS Simulator,name=iPhone 16" CODE_SIGNING_ALLOWED=NO build test
+3. Repeat the UI validation with an iPad simulator.
+
+Device validation
+1. Replace com.example.ArabicLearning in project.yml with an owned bundle identifier.
+2. Select the development team in Xcode. Do not commit personal signing identifiers.
+3. Run on an iPhone and iPad.
+4. Verify finger input, Apple Pencil where available, generated PDF sharing/printing, relaunch persistence, German and MSA system voices, and offline behavior.
+
+Accessibility validation
+1. Run Xcode Accessibility Inspector.
+2. Test VoiceOver reading order in mixed German/Arabic content.
+3. Test the largest Accessibility text sizes, Bold Text, Increase Contrast, Differentiate Without Color, and Reduce Motion.
+4. Confirm Arabic joining and diacritics are not clipped.
+5. Confirm every actionable control remains at least 44 by 44 points and no task has a timer.
+
+Content sign-off required before external distribution
+1. MSA educator/linguist: names, sounds, vowel marks, words, and stroke models.
+2. Native Syrian speaker: dialect spellings, transliterations, and bridge explanations.
+3. German editor: concise instructions and reading difficulty.
+4. Preview every TTS utterance on target devices. Keep unsuitable Syrian speech text-only until human recordings are available.

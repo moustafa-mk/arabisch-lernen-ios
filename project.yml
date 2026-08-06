@@ -1,0 +1,90 @@
+name: ArabicLearning
+
+options:
+  bundleIdPrefix: com.example
+  createIntermediateGroups: true
+  deploymentTarget:
+    iOS: "17.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    CURRENT_PROJECT_VERSION: "1"
+    MARKETING_VERSION: "0.1.0"
+
+targets:
+  ArabicLearning:
+    type: application
+    platform: iOS
+    sources:
+      - path: ArabicLearningApp
+        excludes:
+          - Resources
+    resources:
+      - path: ArabicLearningApp/Resources/Assets.xcassets
+      - path: ArabicLearningApp/Resources/Curriculum.json
+    info:
+      path: ArabicLearningApp/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: Arabisch Lernen
+        UILaunchScreen:
+          UIColorName: LaunchBackground
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.ArabicLearning
+        PRODUCT_NAME: ArabicLearning
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SUPPORTS_MACCATALYST: "NO"
+
+  ArabicLearningTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: ArabicLearningTests
+    dependencies:
+      - target: ArabicLearning
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.ArabicLearningTests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/ArabicLearning.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ArabicLearning"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+
+  ArabicLearningUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: ArabicLearningUITests
+    dependencies:
+      - target: ArabicLearning
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.example.ArabicLearningUITests
+        TEST_TARGET_NAME: ArabicLearning
+
+schemes:
+  ArabicLearning:
+    build:
+      targets:
+        ArabicLearning: all
+        ArabicLearningTests:
+          - test
+        ArabicLearningUITests:
+          - test
+    test:
+      targets:
+        - ArabicLearningTests
+        - ArabicLearningUITests

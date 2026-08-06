@@ -1,0 +1,428 @@
+{
+  "version": 1,
+  "pilotOrder": [
+    "baa",
+    "taa",
+    "thaa",
+    "alif",
+    "dal",
+    "raa",
+    "waw",
+    "nun"
+  ],
+  "letters": [
+    {
+      "id": "alif",
+      "glyph": "ا",
+      "nameGerman": "Alif",
+      "nameArabic": "أَلِف",
+      "transliteration": "alif",
+      "phoneme": "langer Vokal /aː/ oder Vokalträger",
+      "phonemeSpeechText": "آ",
+      "joinsFollowing": false,
+      "forms": {
+        "isolated": "ا",
+        "final": "ـا"
+      },
+      "confusableIDs": [
+        "alif",
+        "dal",
+        "raa"
+      ],
+      "memoryHintGerman": "Alif steht aufrecht und verbindet sich nicht mit dem folgenden Buchstaben.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.53, "y": 0.15 },
+            { "x": 0.52, "y": 0.37 },
+            { "x": 0.51, "y": 0.61 },
+            { "x": 0.50, "y": 0.84 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "baa",
+      "glyph": "ب",
+      "nameGerman": "Bāʾ",
+      "nameArabic": "بَاء",
+      "transliteration": "bāʾ",
+      "phoneme": "/b/",
+      "phonemeSpeechText": "بَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ب",
+        "initial": "بـ",
+        "medial": "ـبـ",
+        "final": "ـب"
+      },
+      "confusableIDs": [
+        "taa",
+        "baa",
+        "thaa"
+      ],
+      "memoryHintGerman": "Bāʾ hat einen Punkt unter der Form.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.82, "y": 0.53 },
+            { "x": 0.77, "y": 0.66 },
+            { "x": 0.61, "y": 0.73 },
+            { "x": 0.39, "y": 0.73 },
+            { "x": 0.22, "y": 0.65 },
+            { "x": 0.19, "y": 0.53 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.50, "y": 0.84 },
+            { "x": 0.51, "y": 0.85 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "taa",
+      "glyph": "ت",
+      "nameGerman": "Tāʾ",
+      "nameArabic": "تَاء",
+      "transliteration": "tāʾ",
+      "phoneme": "/t/",
+      "phonemeSpeechText": "تَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ت",
+        "initial": "تـ",
+        "medial": "ـتـ",
+        "final": "ـت"
+      },
+      "confusableIDs": [
+        "baa",
+        "taa",
+        "thaa"
+      ],
+      "memoryHintGerman": "Tāʾ hat zwei Punkte über der Form.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.82, "y": 0.55 },
+            { "x": 0.76, "y": 0.67 },
+            { "x": 0.60, "y": 0.73 },
+            { "x": 0.39, "y": 0.73 },
+            { "x": 0.22, "y": 0.65 },
+            { "x": 0.19, "y": 0.53 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.44, "y": 0.37 },
+            { "x": 0.45, "y": 0.38 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.57, "y": 0.37 },
+            { "x": 0.58, "y": 0.38 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "thaa",
+      "glyph": "ث",
+      "nameGerman": "Thāʾ",
+      "nameArabic": "ثَاء",
+      "transliteration": "thāʾ",
+      "phoneme": "/θ/ wie englisch „think“",
+      "phonemeSpeechText": "ثَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ث",
+        "initial": "ثـ",
+        "medial": "ـثـ",
+        "final": "ـث"
+      },
+      "confusableIDs": [
+        "baa",
+        "taa",
+        "thaa"
+      ],
+      "memoryHintGerman": "Thāʾ hat drei Punkte über der Form. Im Syrischen klingt es oft wie /t/.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.82, "y": 0.57 },
+            { "x": 0.76, "y": 0.68 },
+            { "x": 0.60, "y": 0.74 },
+            { "x": 0.39, "y": 0.74 },
+            { "x": 0.22, "y": 0.66 },
+            { "x": 0.19, "y": 0.54 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.39, "y": 0.39 },
+            { "x": 0.40, "y": 0.40 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.51, "y": 0.31 },
+            { "x": 0.52, "y": 0.32 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.63, "y": 0.39 },
+            { "x": 0.64, "y": 0.40 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dal",
+      "glyph": "د",
+      "nameGerman": "Dāl",
+      "nameArabic": "دَال",
+      "transliteration": "dāl",
+      "phoneme": "/d/",
+      "phonemeSpeechText": "دَ",
+      "joinsFollowing": false,
+      "forms": {
+        "isolated": "د",
+        "final": "ـد"
+      },
+      "confusableIDs": [
+        "dal",
+        "raa",
+        "waw"
+      ],
+      "memoryHintGerman": "Dāl verbindet sich nicht mit dem folgenden Buchstaben.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.66, "y": 0.30 },
+            { "x": 0.77, "y": 0.47 },
+            { "x": 0.73, "y": 0.66 },
+            { "x": 0.57, "y": 0.73 },
+            { "x": 0.35, "y": 0.70 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "raa",
+      "glyph": "ر",
+      "nameGerman": "Rāʾ",
+      "nameArabic": "رَاء",
+      "transliteration": "rāʾ",
+      "phoneme": "gerolltes /r/",
+      "phonemeSpeechText": "رَ",
+      "joinsFollowing": false,
+      "forms": {
+        "isolated": "ر",
+        "final": "ـر"
+      },
+      "confusableIDs": [
+        "raa",
+        "dal",
+        "waw"
+      ],
+      "memoryHintGerman": "Rāʾ fällt unter die Schreiblinie und verbindet sich nicht mit dem folgenden Buchstaben.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.68, "y": 0.40 },
+            { "x": 0.68, "y": 0.57 },
+            { "x": 0.58, "y": 0.73 },
+            { "x": 0.39, "y": 0.82 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "waw",
+      "glyph": "و",
+      "nameGerman": "Wāw",
+      "nameArabic": "وَاو",
+      "transliteration": "wāw",
+      "phoneme": "/w/ oder langer Vokal /uː/",
+      "phonemeSpeechText": "وَ",
+      "joinsFollowing": false,
+      "forms": {
+        "isolated": "و",
+        "final": "ـو"
+      },
+      "confusableIDs": [
+        "waw",
+        "raa",
+        "dal"
+      ],
+      "memoryHintGerman": "Wāw hat eine kleine Schleife und verbindet sich nicht mit dem folgenden Buchstaben.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.63, "y": 0.32 },
+            { "x": 0.73, "y": 0.39 },
+            { "x": 0.73, "y": 0.52 },
+            { "x": 0.62, "y": 0.59 },
+            { "x": 0.52, "y": 0.51 },
+            { "x": 0.55, "y": 0.39 },
+            { "x": 0.67, "y": 0.40 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.68, "y": 0.55 },
+            { "x": 0.61, "y": 0.70 },
+            { "x": 0.47, "y": 0.82 },
+            { "x": 0.31, "y": 0.85 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nun",
+      "glyph": "ن",
+      "nameGerman": "Nūn",
+      "nameArabic": "نُون",
+      "transliteration": "nūn",
+      "phoneme": "/n/",
+      "phonemeSpeechText": "نَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ن",
+        "initial": "نـ",
+        "medial": "ـنـ",
+        "final": "ـن"
+      },
+      "confusableIDs": [
+        "baa",
+        "taa",
+        "nun"
+      ],
+      "memoryHintGerman": "Nūn hat einen Punkt über einer tieferen Schale.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.79, "y": 0.51 },
+            { "x": 0.76, "y": 0.69 },
+            { "x": 0.63, "y": 0.80 },
+            { "x": 0.44, "y": 0.81 },
+            { "x": 0.28, "y": 0.71 },
+            { "x": 0.24, "y": 0.53 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.52, "y": 0.38 },
+            { "x": 0.53, "y": 0.39 }
+          ]
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "bab",
+      "arabicVowelized": "بَاب",
+      "arabicUnvowelized": "باب",
+      "german": "die Tür",
+      "msaTransliteration": "bāb",
+      "msaSpeechText": "بَاب",
+      "syrianText": "باب",
+      "syrianTransliteration": "bāb",
+      "bridgeNoteGerman": "Das Wort ist im Syrischen und in der Hochsprache fast gleich. In der Lernform zeigt Fatḥa den kurzen Vokal.",
+      "letterIDs": [
+        "baa",
+        "alif",
+        "baa"
+      ],
+      "focusLetterIDs": [
+        "baa",
+        "alif"
+      ]
+    },
+    {
+      "id": "dar",
+      "arabicVowelized": "دَار",
+      "arabicUnvowelized": "دار",
+      "german": "das Haus / Zuhause",
+      "msaTransliteration": "dār",
+      "msaSpeechText": "دَار",
+      "syrianText": "دار",
+      "syrianTransliteration": "dār",
+      "bridgeNoteGerman": "Dār ist in beiden Varianten verständlich. Nach Dāl und Alif beginnt jeweils eine neue Verbindung.",
+      "letterIDs": [
+        "dal",
+        "alif",
+        "raa"
+      ],
+      "focusLetterIDs": [
+        "dal",
+        "raa"
+      ]
+    },
+    {
+      "id": "bint",
+      "arabicVowelized": "بِنْت",
+      "arabicUnvowelized": "بنت",
+      "german": "das Mädchen / die Tochter",
+      "msaTransliteration": "bint",
+      "msaSpeechText": "بِنْت",
+      "syrianText": "بنت",
+      "syrianTransliteration": "bint",
+      "bridgeNoteGerman": "Die Buchstabenfolge ist gleich. Kasra unter Bāʾ trägt hier den kurzen Vokal /i/.",
+      "letterIDs": [
+        "baa",
+        "nun",
+        "taa"
+      ],
+      "focusLetterIDs": [
+        "taa",
+        "nun"
+      ]
+    },
+    {
+      "id": "thawb",
+      "arabicVowelized": "ثَوْب",
+      "arabicUnvowelized": "ثوب",
+      "german": "das Gewand / Kleidungsstück",
+      "msaTransliteration": "thawb",
+      "msaSpeechText": "ثَوْب",
+      "syrianText": "توب",
+      "syrianTransliteration": "tōb",
+      "bridgeNoteGerman": "In vielen syrischen Sprechweisen wird MSA /th/ hier zu /t/. Die MSA-Schreibung behält Thāʾ.",
+      "letterIDs": [
+        "thaa",
+        "waw",
+        "baa"
+      ],
+      "focusLetterIDs": [
+        "thaa",
+        "waw"
+      ]
+    },
+    {
+      "id": "nur",
+      "arabicVowelized": "نُور",
+      "arabicUnvowelized": "نور",
+      "german": "das Licht",
+      "msaTransliteration": "nūr",
+      "msaSpeechText": "نُور",
+      "syrianText": "نور",
+      "syrianTransliteration": "nūr",
+      "bridgeNoteGerman": "Das Wort ist sehr nah. Ḍamma auf Nūn plus Wāw ergibt hier den langen Vokal /uː/.",
+      "letterIDs": [
+        "nun",
+        "waw",
+        "raa"
+      ],
+      "focusLetterIDs": [
+        "nun",
+        "waw",
+        "raa"
+      ]
+    }
+  ]
+}
