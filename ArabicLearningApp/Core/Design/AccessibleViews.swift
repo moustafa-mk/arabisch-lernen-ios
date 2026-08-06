@@ -6,7 +6,7 @@ struct ArabicGlyphView: View {
     var scale: Double = 1
     var baseSize: CGFloat = 88
 
-    @ScaledMetric(relativeTo: .largeTitle) private var scaledSize: CGFloat
+    @ScaledMetric(relativeTo: .largeTitle) private var scaledSize: CGFloat = 88
 
     init(
         _ glyph: String,
