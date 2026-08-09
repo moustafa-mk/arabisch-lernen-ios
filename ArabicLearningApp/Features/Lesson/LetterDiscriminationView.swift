@@ -62,6 +62,7 @@ struct LetterDiscriminationView: View {
                             Spacer()
                             Text(candidate.glyph)
                                 .font(.system(size: 58, weight: .medium))
+                                .foregroundStyle(AppColor.ink)
                                 .environment(\.layoutDirection, .rightToLeft)
                             Spacer()
                             if selectedID == candidate.id {

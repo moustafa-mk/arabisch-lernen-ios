@@ -129,9 +129,10 @@ struct HomeView: View {
                                     VStack(spacing: 4) {
                                         Text(letter.glyph)
                                             .font(.system(size: 34, weight: .medium))
+                                            .foregroundStyle(AppColor.ink)
                                         Image(systemName: mastered ? "checkmark.circle.fill" : "circle")
                                             .font(.caption)
-                                            .foregroundStyle(mastered ? AppColor.teal : .secondary)
+                                            .foregroundStyle(mastered ? AppColor.teal : AppColor.muted)
                                     }
                                     .frame(maxWidth: .infinity, minHeight: 72)
                                     .background(
