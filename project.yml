@@ -23,9 +23,10 @@ targets:
       - path: ArabicLearningApp
         excludes:
           - Resources
-    resources:
       - path: ArabicLearningApp/Resources/Assets.xcassets
+        buildPhase: resources
       - path: ArabicLearningApp/Resources/Curriculum.json
+        buildPhase: resources
     info:
       path: ArabicLearningApp/Resources/Info.plist
       properties:
