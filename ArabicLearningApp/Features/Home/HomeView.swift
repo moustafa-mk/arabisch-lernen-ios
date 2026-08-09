@@ -18,24 +18,34 @@ struct HomeView: View {
         )
     }
 
+    private var pilotProgressByID: [String: PilotLetterProgress] {
+        progressByID.mapValues {
+            PilotLetterProgress(
+                exposureCount: $0.exposureCount,
+                mastery: $0.mastery,
+                nextReviewAt: $0.nextReviewAt
+            )
+        }
+    }
+
     private var recommendedLetter: LetterContent {
-        let dueID = curriculum.pilotOrder.first {
-            guard let progress = progressByID[$0] else {
-                return false
-            }
-            return progress.nextReviewAt <= .now
-        }
-        let nextLearningID = curriculum.pilotOrder.first {
-            (progressByID[$0]?.mastery ?? 0) < 0.75
-        }
-        let nextID = dueID ?? nextLearningID ?? curriculum.pilotOrder[0]
+        let nextID = PilotProgressPolicy.recommendedLetterID(
+            pilotOrder: curriculum.pilotOrder,
+            progressByID: pilotProgressByID,
+            now: .now
+        ) ?? curriculum.pilotOrder[0]
         return curriculum.letter(id: nextID) ?? curriculum.letters[0]
     }
 
+    private var recommendedLessonIsReview: Bool {
+        PilotProgressPolicy.hasCompletedLesson(pilotProgressByID[recommendedLetter.id])
+    }
+
     private var completedCount: Int {
-        curriculum.pilotOrder.filter {
-            (progressByID[$0]?.mastery ?? 0) >= 0.75
-        }.count
+        PilotProgressPolicy.completedCount(
+            pilotOrder: curriculum.pilotOrder,
+            progressByID: pilotProgressByID
+        )
     }
 
     private var dueCount: Int {
@@ -108,7 +118,7 @@ struct HomeView: View {
                     Button {
                         presentedLetter = recommendedLetter
                     } label: {
-                        Text(dueCount > 0 ? "Wiederholen" : "Weiterlernen")
+                        Text(recommendedLessonIsReview ? "Wiederholen" : "Weiterlernen")
                     }
                     .buttonStyle(PrimaryButtonStyle())
                     .accessibilityIdentifier("start-lesson")
@@ -125,14 +135,16 @@ struct HomeView: View {
                         ) {
                             ForEach(curriculum.pilotOrder, id: \.self) { letterID in
                                 if let letter = curriculum.letter(id: letterID) {
-                                    let mastered = (progressByID[letterID]?.mastery ?? 0) >= 0.75
+                                    let completed = PilotProgressPolicy.hasCompletedLesson(
+                                        pilotProgressByID[letterID]
+                                    )
                                     VStack(spacing: 4) {
                                         Text(letter.glyph)
                                             .font(.system(size: 34, weight: .medium))
                                             .foregroundStyle(AppColor.ink)
-                                        Image(systemName: mastered ? "checkmark.circle.fill" : "circle")
+                                        Image(systemName: completed ? "checkmark.circle.fill" : "circle")
                                             .font(.caption)
-                                            .foregroundStyle(mastered ? AppColor.teal : AppColor.muted)
+                                            .foregroundStyle(completed ? AppColor.teal : AppColor.muted)
                                     }
                                     .frame(maxWidth: .infinity, minHeight: 72)
                                     .background(
@@ -141,7 +153,9 @@ struct HomeView: View {
                                     )
                                     .accessibilityElement(children: .ignore)
                                     .accessibilityLabel(letter.nameGerman)
-                                    .accessibilityValue(mastered ? "Sicher" : "Noch zu lernen")
+                                    .accessibilityValue(
+                                        completed ? "Einheit abgeschlossen" : "Noch zu lernen"
+                                    )
                                 }
                             }
                         }
