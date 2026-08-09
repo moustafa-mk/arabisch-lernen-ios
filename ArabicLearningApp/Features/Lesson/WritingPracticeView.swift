@@ -26,7 +26,7 @@ struct WritingPracticeView: View {
 
     @State private var mode = WritingMode.screen
     @State private var canvasView = PKCanvasView()
-    @State private var showsGuide = true
+    @State private var showsGuide = false
     @State private var guideReplayID = 0
     @State private var paperCompleted = false
     @State private var pdfURL: URL?
@@ -45,7 +45,7 @@ struct WritingPracticeView: View {
     }
 
     private var screenInstruction: String {
-        "Schreibe \(letter.nameGerman) von rechts nach links. Die Bewegung wird gezeigt, aber deine Strichfolge wird nicht streng bewertet."
+        "Schreibe \(letter.nameGerman) von rechts nach links. Bei Bedarf kannst du den Schreibweg anzeigen. Deine Strichfolge wird nicht streng bewertet."
     }
 
     private var paperInstruction: String {
@@ -105,7 +105,7 @@ struct WritingPracticeView: View {
             Text("Schreibe \(letter.glyph) von rechts nach links.")
                 .font(.title2.bold())
             GermanInstruction(
-                "Die Bewegung wird gezeigt, aber deine Strichfolge wird nicht streng bewertet."
+                "Bei Bedarf kannst du den Schreibweg anzeigen. Deine Strichfolge wird nicht streng bewertet."
             )
             Toggle("Schreibweg anzeigen", isOn: $showsGuide)
             Label("Finger und Apple Pencil funktionieren beide.", systemImage: "pencil.tip")
