@@ -21,7 +21,7 @@ final class ArabicLearningUITests: XCTestCase {
         )
     }
 
-    func testCompletesPilotLessonUsingPaperPractice() {
+    func testCompletesAlphabetLessonUsingPaperPractice() {
         let app = launchApp()
         app.buttons["start-learning"].tap()
         XCTAssertTrue(app.buttons["start-lesson"].waitForExistence(timeout: 3))
@@ -29,7 +29,7 @@ final class ArabicLearningUITests: XCTestCase {
 
         XCTAssertTrue(app.buttons["continue-to-discrimination"].waitForExistence(timeout: 3))
         app.buttons["continue-to-discrimination"].tap()
-        app.buttons["candidate-baa"].tap()
+        app.buttons["candidate-alif"].tap()
         app.buttons["continue-to-writing"].tap()
 
         app.segmentedControls.buttons["Auf Papier"].tap()
@@ -47,6 +47,26 @@ final class ArabicLearningUITests: XCTestCase {
         app.buttons["finish-lesson"].tap()
         XCTAssertTrue(
             app.descendants(matching: .any)["home-screen"].waitForExistence(timeout: 3)
+        )
+    }
+
+    func testCreatesAlphabetHomeworkWorkbook() {
+        let app = launchApp()
+        app.buttons["start-learning"].tap()
+
+        let createButton = app.buttons["create-homework-workbook"]
+        XCTAssertTrue(createButton.waitForExistence(timeout: 3))
+        for _ in 0..<3 {
+            if createButton.isHittable {
+                break
+            }
+            app.swipeUp()
+        }
+
+        XCTAssertTrue(createButton.isHittable)
+        createButton.tap()
+        XCTAssertTrue(
+            app.buttons["share-homework-workbook"].waitForExistence(timeout: 10)
         )
     }
 }

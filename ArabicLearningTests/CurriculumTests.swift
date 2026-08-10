@@ -2,23 +2,29 @@ import XCTest
 @testable import ArabicLearning
 
 final class CurriculumTests: XCTestCase {
-    func testBundledCurriculumIsValidAndComplete() throws {
+    func testBundledCurriculumContainsCompleteAlphabet() throws {
         let curriculum = try CurriculumLoader.loadBundled()
 
-        XCTAssertEqual(curriculum.version, 1)
-        XCTAssertEqual(curriculum.letters.count, 8)
-        XCTAssertEqual(curriculum.words.count, 5)
+        XCTAssertEqual(curriculum.version, 2)
+        XCTAssertEqual(curriculum.letters.count, 28)
+        XCTAssertEqual(curriculum.words.count, 17)
         XCTAssertEqual(
-            curriculum.pilotOrder,
-            ["baa", "taa", "thaa", "alif", "dal", "raa", "waw", "nun"]
+            curriculum.alphabetOrder,
+            [
+                "alif", "baa", "taa", "thaa", "jim", "haa", "khaa",
+                "dal", "dhal", "raa", "zay", "sin", "shin", "saad",
+                "daad", "ttaa", "zzaa", "ayn", "ghayn", "faa", "qaf",
+                "kaf", "lam", "mim", "nun", "hah", "waw", "yaa"
+            ]
         )
+        XCTAssertEqual(curriculum.letters.map(\.id), curriculum.alphabetOrder)
         XCTAssertTrue(CurriculumValidator.validate(curriculum).isEmpty)
     }
 
-    func testEveryPilotLetterHasAWordAndValidContrastGroup() throws {
+    func testEveryLetterHasAWordAndValidContrastGroup() throws {
         let curriculum = try CurriculumLoader.loadBundled()
 
-        for letterID in curriculum.pilotOrder {
+        for letterID in curriculum.alphabetOrder {
             let letter = try XCTUnwrap(curriculum.letter(id: letterID))
             XCTAssertNotNil(curriculum.firstWord(focusingOn: letterID))
             XCTAssertTrue(letter.confusableIDs.contains(letterID))

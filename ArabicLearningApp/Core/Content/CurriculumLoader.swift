@@ -61,14 +61,18 @@ enum CurriculumValidator {
 
         let letterIDs = curriculum.letters.map(\.id)
         let uniqueLetterIDs = Set(letterIDs)
+        let glyphsByLetterID = Dictionary(
+            uniqueKeysWithValues: curriculum.letters.map { ($0.id, $0.glyph) }
+        )
         if letterIDs.isEmpty {
-            issues.append("Der Pilot benötigt mindestens einen Buchstaben.")
+            issues.append("Das Alphabet benötigt mindestens einen Buchstaben.")
         }
         if uniqueLetterIDs.count != letterIDs.count {
             issues.append("Buchstaben-IDs müssen eindeutig sein.")
         }
-        if Set(curriculum.pilotOrder) != uniqueLetterIDs {
-            issues.append("Die Pilot-Reihenfolge muss jeden Buchstaben genau einmal enthalten.")
+        if curriculum.alphabetOrder.count != uniqueLetterIDs.count
+            || Set(curriculum.alphabetOrder) != uniqueLetterIDs {
+            issues.append("Die Alphabet-Reihenfolge muss jeden Buchstaben genau einmal enthalten.")
         }
 
         for letter in curriculum.letters {
@@ -92,7 +96,7 @@ enum CurriculumValidator {
 
         let wordIDs = curriculum.words.map(\.id)
         if wordIDs.isEmpty {
-            issues.append("Der Pilot benötigt mindestens ein Wort.")
+            issues.append("Das Alphabet benötigt mindestens ein Wort.")
         }
         if Set(wordIDs).count != wordIDs.count {
             issues.append("Wort-IDs müssen eindeutig sein.")
@@ -103,6 +107,11 @@ enum CurriculumValidator {
             }
             if !Set(word.letterIDs).isSubset(of: uniqueLetterIDs) {
                 issues.append("Wort \(word.id) enthält unbekannte Buchstaben.")
+            } else {
+                let assembledWord = word.letterIDs.compactMap { glyphsByLetterID[$0] }.joined()
+                if assembledWord != word.arabicUnvowelized {
+                    issues.append("Die Buchstabenfolge für Wort \(word.id) stimmt nicht mit seiner Schreibweise überein.")
+                }
             }
             if word.focusLetterIDs.isEmpty || !Set(word.focusLetterIDs).isSubset(of: Set(word.letterIDs)) {
                 issues.append("Wort \(word.id) benötigt gültige Fokusbuchstaben.")
@@ -111,7 +120,7 @@ enum CurriculumValidator {
 
         let coveredLetters = Set(curriculum.words.flatMap(\.focusLetterIDs))
         if !uniqueLetterIDs.isSubset(of: coveredLetters) {
-            issues.append("Jeder Pilotbuchstabe benötigt mindestens ein Fokuswort.")
+            issues.append("Jeder Buchstabe benötigt mindestens ein Fokuswort.")
         }
         return issues
     }

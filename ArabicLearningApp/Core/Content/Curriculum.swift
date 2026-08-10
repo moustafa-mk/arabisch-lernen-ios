@@ -2,7 +2,7 @@ import Foundation
 
 struct Curriculum: Codable, Sendable {
     let version: Int
-    let pilotOrder: [String]
+    let alphabetOrder: [String]
     let letters: [LetterContent]
     let words: [WordContent]
 

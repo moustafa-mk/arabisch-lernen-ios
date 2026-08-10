@@ -9,18 +9,20 @@ struct HomeView: View {
     @Query private var progressRecords: [SkillProgress]
     @AppStorage(PreferenceKey.calmMode) private var calmMode = false
     @State private var presentedLetter: LetterContent?
+    @State private var homeworkPDFURL: URL?
+    @State private var homeworkError: String?
 
     private var progressByID: [String: SkillProgress] {
         Dictionary(
             uniqueKeysWithValues: progressRecords
-                .filter { curriculum.pilotOrder.contains($0.skillID) }
+                .filter { curriculum.alphabetOrder.contains($0.skillID) }
                 .map { ($0.skillID, $0) }
         )
     }
 
-    private var pilotProgressByID: [String: PilotLetterProgress] {
+    private var alphabetProgressByID: [String: AlphabetLetterProgress] {
         progressByID.mapValues {
-            PilotLetterProgress(
+            AlphabetLetterProgress(
                 exposureCount: $0.exposureCount,
                 mastery: $0.mastery,
                 nextReviewAt: $0.nextReviewAt
@@ -29,28 +31,28 @@ struct HomeView: View {
     }
 
     private var recommendedLetter: LetterContent {
-        let nextID = PilotProgressPolicy.recommendedLetterID(
-            pilotOrder: curriculum.pilotOrder,
-            progressByID: pilotProgressByID,
+        let nextID = AlphabetProgressPolicy.recommendedLetterID(
+            alphabetOrder: curriculum.alphabetOrder,
+            progressByID: alphabetProgressByID,
             now: .now
-        ) ?? curriculum.pilotOrder[0]
+        ) ?? curriculum.alphabetOrder[0]
         return curriculum.letter(id: nextID) ?? curriculum.letters[0]
     }
 
     private var recommendedLessonIsReview: Bool {
-        PilotProgressPolicy.hasCompletedLesson(pilotProgressByID[recommendedLetter.id])
+        AlphabetProgressPolicy.hasCompletedLesson(alphabetProgressByID[recommendedLetter.id])
     }
 
     private var completedCount: Int {
-        PilotProgressPolicy.completedCount(
-            pilotOrder: curriculum.pilotOrder,
-            progressByID: pilotProgressByID
+        AlphabetProgressPolicy.completedCount(
+            alphabetOrder: curriculum.alphabetOrder,
+            progressByID: alphabetProgressByID
         )
     }
 
     private var dueCount: Int {
         progressRecords.filter {
-            curriculum.pilotOrder.contains($0.skillID) && $0.nextReviewAt <= .now
+            curriculum.alphabetOrder.contains($0.skillID) && $0.nextReviewAt <= .now
         }.count
     }
 
@@ -76,14 +78,14 @@ struct HomeView: View {
 
                 VStack(alignment: .leading, spacing: 10) {
                     HStack {
-                        Text("Pilotfortschritt")
+                        Text("Alphabetfortschritt")
                             .font(.headline)
                         Spacer()
-                        Text("\(completedCount) von \(curriculum.pilotOrder.count)")
+                        Text("\(completedCount) von \(curriculum.alphabetOrder.count)")
                             .foregroundStyle(.secondary)
                     }
                     AppProgressView(
-                        value: Double(completedCount) / Double(curriculum.pilotOrder.count)
+                        value: Double(completedCount) / Double(curriculum.alphabetOrder.count)
                     )
                     if dueCount > 0 {
                         Label(
@@ -125,18 +127,63 @@ struct HomeView: View {
                 }
                 .appCard()
 
+                VStack(alignment: .leading, spacing: 12) {
+                    Label("Hausaufgabenheft", systemImage: "book.closed")
+                        .font(.title2.bold())
+                    Text(
+                        "\(curriculum.alphabetOrder.count) druckbare Übungsseiten – eine für jeden Buchstaben."
+                    )
+                    .foregroundStyle(.secondary)
+
+                    Button {
+                        do {
+                            homeworkPDFURL = try PracticeSheetRenderer.writeTemporaryWorkbook(
+                                curriculum: curriculum
+                            )
+                            homeworkError = nil
+                        } catch {
+                            homeworkPDFURL = nil
+                            homeworkError = error.localizedDescription
+                        }
+                    } label: {
+                        Label("Hausaufgabenheft erstellen", systemImage: "doc.badge.plus")
+                    }
+                    .buttonStyle(SecondaryButtonStyle())
+                    .accessibilityIdentifier("create-homework-workbook")
+
+                    if let homeworkPDFURL {
+                        ShareLink(item: homeworkPDFURL) {
+                            Label("Drucken oder teilen", systemImage: "square.and.arrow.up")
+                        }
+                        .buttonStyle(SecondaryButtonStyle())
+                        .accessibilityIdentifier("share-homework-workbook")
+                    }
+
+                    if let homeworkError {
+                        Label(homeworkError, systemImage: "exclamationmark.triangle")
+                            .padding(12)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .background(
+                                AppColor.terracottaSoft,
+                                in: RoundedRectangle(cornerRadius: 12)
+                            )
+                            .accessibilityIdentifier("homework-workbook-error")
+                    }
+                }
+                .appCard()
+
                 if !calmMode {
                     VStack(alignment: .leading, spacing: 12) {
-                        Text("Pilotbuchstaben")
+                        Text("Arabisches Alphabet")
                             .font(.headline)
                         LazyVGrid(
                             columns: [GridItem(.adaptive(minimum: 64), spacing: 12)],
                             spacing: 12
                         ) {
-                            ForEach(curriculum.pilotOrder, id: \.self) { letterID in
+                            ForEach(curriculum.alphabetOrder, id: \.self) { letterID in
                                 if let letter = curriculum.letter(id: letterID) {
-                                    let completed = PilotProgressPolicy.hasCompletedLesson(
-                                        pilotProgressByID[letterID]
+                                    let completed = AlphabetProgressPolicy.hasCompletedLesson(
+                                        alphabetProgressByID[letterID]
                                     )
                                     VStack(spacing: 4) {
                                         Text(letter.glyph)

@@ -1,3 +1,4 @@
+import CoreGraphics
 import XCTest
 @testable import ArabicLearning
 
@@ -11,5 +12,17 @@ final class PracticeSheetRendererTests: XCTestCase {
 
         XCTAssertGreaterThan(data.count, 1_000)
         XCTAssertEqual(String(decoding: data.prefix(4), as: UTF8.self), "%PDF")
+    }
+
+    func testHomeworkWorkbookContainsOnePagePerAlphabetLetter() throws {
+        let curriculum = try CurriculumLoader.loadBundled()
+
+        let data = try PracticeSheetRenderer.renderWorkbook(curriculum: curriculum)
+        let provider = try XCTUnwrap(CGDataProvider(data: data as CFData))
+        let document = try XCTUnwrap(CGPDFDocument(provider))
+
+        XCTAssertGreaterThan(data.count, 20_000)
+        XCTAssertEqual(String(decoding: data.prefix(4), as: UTF8.self), "%PDF")
+        XCTAssertEqual(document.numberOfPages, curriculum.alphabetOrder.count)
     }
 }

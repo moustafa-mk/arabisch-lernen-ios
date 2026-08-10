@@ -1,14 +1,34 @@
 {
-  "version": 1,
-  "pilotOrder": [
+  "version": 2,
+  "alphabetOrder": [
+    "alif",
     "baa",
     "taa",
     "thaa",
-    "alif",
+    "jim",
+    "haa",
+    "khaa",
     "dal",
+    "dhal",
     "raa",
+    "zay",
+    "sin",
+    "shin",
+    "saad",
+    "daad",
+    "ttaa",
+    "zzaa",
+    "ayn",
+    "ghayn",
+    "faa",
+    "qaf",
+    "kaf",
+    "lam",
+    "mim",
+    "nun",
+    "hah",
     "waw",
-    "nun"
+    "yaa"
   ],
   "letters": [
     {
@@ -24,11 +44,7 @@
         "isolated": "ا",
         "final": "ـا"
       },
-      "confusableIDs": [
-        "alif",
-        "dal",
-        "raa"
-      ],
+      "confusableIDs": ["alif", "lam", "kaf"],
       "memoryHintGerman": "Alif steht aufrecht und verbindet sich nicht mit dem folgenden Buchstaben.",
       "strokePaths": [
         {
@@ -56,11 +72,7 @@
         "medial": "ـبـ",
         "final": "ـب"
       },
-      "confusableIDs": [
-        "taa",
-        "baa",
-        "thaa"
-      ],
+      "confusableIDs": ["baa", "taa", "thaa", "nun", "yaa"],
       "memoryHintGerman": "Bāʾ hat einen Punkt unter der Form.",
       "strokePaths": [
         {
@@ -96,11 +108,7 @@
         "medial": "ـتـ",
         "final": "ـت"
       },
-      "confusableIDs": [
-        "baa",
-        "taa",
-        "thaa"
-      ],
+      "confusableIDs": ["baa", "taa", "thaa", "nun", "yaa"],
       "memoryHintGerman": "Tāʾ hat zwei Punkte über der Form.",
       "strokePaths": [
         {
@@ -142,11 +150,7 @@
         "medial": "ـثـ",
         "final": "ـث"
       },
-      "confusableIDs": [
-        "baa",
-        "taa",
-        "thaa"
-      ],
+      "confusableIDs": ["baa", "taa", "thaa", "nun", "yaa"],
       "memoryHintGerman": "Thāʾ hat drei Punkte über der Form. Im Syrischen klingt es oft wie /t/.",
       "strokePaths": [
         {
@@ -180,6 +184,114 @@
       ]
     },
     {
+      "id": "jim",
+      "glyph": "ج",
+      "nameGerman": "Dschīm",
+      "nameArabic": "جِيم",
+      "transliteration": "jīm",
+      "phoneme": "/dʒ/ wie „dsch“ in Dschungel",
+      "phonemeSpeechText": "جَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ج",
+        "initial": "جـ",
+        "medial": "ـجـ",
+        "final": "ـج"
+      },
+      "confusableIDs": ["jim", "haa", "khaa"],
+      "memoryHintGerman": "Dschīm hat einen Punkt unter der Hakenform. Im städtischen Syrisch klingt es oft wie das französische j.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.76, "y": 0.33 },
+            { "x": 0.55, "y": 0.32 },
+            { "x": 0.39, "y": 0.43 },
+            { "x": 0.51, "y": 0.54 },
+            { "x": 0.70, "y": 0.57 },
+            { "x": 0.66, "y": 0.74 },
+            { "x": 0.50, "y": 0.83 },
+            { "x": 0.30, "y": 0.76 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.51, "y": 0.68 },
+            { "x": 0.52, "y": 0.69 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "haa",
+      "glyph": "ح",
+      "nameGerman": "Ḥāʾ",
+      "nameArabic": "حَاء",
+      "transliteration": "ḥāʾ",
+      "phoneme": "/ħ/, ein kräftiger stimmloser Rachenlaut",
+      "phonemeSpeechText": "حَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ح",
+        "initial": "حـ",
+        "medial": "ـحـ",
+        "final": "ـح"
+      },
+      "confusableIDs": ["haa", "jim", "khaa"],
+      "memoryHintGerman": "Ḥāʾ hat dieselbe Hakenform wie Dschīm und Khāʾ, aber keinen Punkt.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.76, "y": 0.33 },
+            { "x": 0.55, "y": 0.32 },
+            { "x": 0.39, "y": 0.43 },
+            { "x": 0.51, "y": 0.54 },
+            { "x": 0.70, "y": 0.57 },
+            { "x": 0.66, "y": 0.74 },
+            { "x": 0.50, "y": 0.83 },
+            { "x": 0.30, "y": 0.76 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "khaa",
+      "glyph": "خ",
+      "nameGerman": "Khāʾ",
+      "nameArabic": "خَاء",
+      "transliteration": "khāʾ",
+      "phoneme": "/x/ wie „ch“ in Bach",
+      "phonemeSpeechText": "خَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "خ",
+        "initial": "خـ",
+        "medial": "ـخـ",
+        "final": "ـخ"
+      },
+      "confusableIDs": ["khaa", "jim", "haa"],
+      "memoryHintGerman": "Khāʾ hat dieselbe Hakenform wie Ḥāʾ, mit einem Punkt darüber.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.76, "y": 0.36 },
+            { "x": 0.55, "y": 0.35 },
+            { "x": 0.39, "y": 0.46 },
+            { "x": 0.51, "y": 0.57 },
+            { "x": 0.70, "y": 0.60 },
+            { "x": 0.66, "y": 0.76 },
+            { "x": 0.50, "y": 0.84 },
+            { "x": 0.30, "y": 0.77 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.54, "y": 0.22 },
+            { "x": 0.55, "y": 0.23 }
+          ]
+        }
+      ]
+    },
+    {
       "id": "dal",
       "glyph": "د",
       "nameGerman": "Dāl",
@@ -192,11 +304,7 @@
         "isolated": "د",
         "final": "ـد"
       },
-      "confusableIDs": [
-        "dal",
-        "raa",
-        "waw"
-      ],
+      "confusableIDs": ["dal", "dhal", "raa", "zay"],
       "memoryHintGerman": "Dāl verbindet sich nicht mit dem folgenden Buchstaben.",
       "strokePaths": [
         {
@@ -206,6 +314,39 @@
             { "x": 0.73, "y": 0.66 },
             { "x": 0.57, "y": 0.73 },
             { "x": 0.35, "y": 0.70 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dhal",
+      "glyph": "ذ",
+      "nameGerman": "Dhāl",
+      "nameArabic": "ذَال",
+      "transliteration": "dhāl",
+      "phoneme": "/ð/ wie englisch „th“ in this",
+      "phonemeSpeechText": "ذَ",
+      "joinsFollowing": false,
+      "forms": {
+        "isolated": "ذ",
+        "final": "ـذ"
+      },
+      "confusableIDs": ["dhal", "dal", "zay"],
+      "memoryHintGerman": "Dhāl sieht wie Dāl mit einem Punkt darüber aus und verbindet sich nicht mit dem folgenden Buchstaben. Im Syrischen klingt es oft wie /d/.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.66, "y": 0.34 },
+            { "x": 0.77, "y": 0.50 },
+            { "x": 0.73, "y": 0.68 },
+            { "x": 0.57, "y": 0.75 },
+            { "x": 0.35, "y": 0.72 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.64, "y": 0.20 },
+            { "x": 0.65, "y": 0.21 }
           ]
         }
       ]
@@ -223,11 +364,7 @@
         "isolated": "ر",
         "final": "ـر"
       },
-      "confusableIDs": [
-        "raa",
-        "dal",
-        "waw"
-      ],
+      "confusableIDs": ["raa", "zay", "dal", "dhal"],
       "memoryHintGerman": "Rāʾ fällt unter die Schreiblinie und verbindet sich nicht mit dem folgenden Buchstaben.",
       "strokePaths": [
         {
@@ -236,6 +373,605 @@
             { "x": 0.68, "y": 0.57 },
             { "x": 0.58, "y": 0.73 },
             { "x": 0.39, "y": 0.82 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zay",
+      "glyph": "ز",
+      "nameGerman": "Zāy",
+      "nameArabic": "زَاي",
+      "transliteration": "zāy",
+      "phoneme": "/z/ wie „s“ in Rose",
+      "phonemeSpeechText": "زَ",
+      "joinsFollowing": false,
+      "forms": {
+        "isolated": "ز",
+        "final": "ـز"
+      },
+      "confusableIDs": ["zay", "raa", "dhal"],
+      "memoryHintGerman": "Zāy sieht wie Rāʾ mit einem Punkt darüber aus und verbindet sich nicht mit dem folgenden Buchstaben.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.68, "y": 0.43 },
+            { "x": 0.68, "y": 0.59 },
+            { "x": 0.58, "y": 0.75 },
+            { "x": 0.39, "y": 0.84 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.65, "y": 0.28 },
+            { "x": 0.66, "y": 0.29 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sin",
+      "glyph": "س",
+      "nameGerman": "Sīn",
+      "nameArabic": "سِين",
+      "transliteration": "sīn",
+      "phoneme": "/s/ wie „ss“ in Fluss",
+      "phonemeSpeechText": "سَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "س",
+        "initial": "سـ",
+        "medial": "ـسـ",
+        "final": "ـس"
+      },
+      "confusableIDs": ["sin", "shin", "nun"],
+      "memoryHintGerman": "Sīn hat drei kleine Zähne und keine Punkte.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.84, "y": 0.48 },
+            { "x": 0.78, "y": 0.61 },
+            { "x": 0.71, "y": 0.48 },
+            { "x": 0.65, "y": 0.61 },
+            { "x": 0.58, "y": 0.48 },
+            { "x": 0.52, "y": 0.63 },
+            { "x": 0.43, "y": 0.73 },
+            { "x": 0.28, "y": 0.73 },
+            { "x": 0.18, "y": 0.62 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "shin",
+      "glyph": "ش",
+      "nameGerman": "Schīn",
+      "nameArabic": "شِين",
+      "transliteration": "shīn",
+      "phoneme": "/ʃ/ wie „sch“ in Schule",
+      "phonemeSpeechText": "شَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ش",
+        "initial": "شـ",
+        "medial": "ـشـ",
+        "final": "ـش"
+      },
+      "confusableIDs": ["shin", "sin", "nun"],
+      "memoryHintGerman": "Schīn sieht wie Sīn mit drei Punkten darüber aus.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.84, "y": 0.52 },
+            { "x": 0.78, "y": 0.64 },
+            { "x": 0.71, "y": 0.52 },
+            { "x": 0.65, "y": 0.64 },
+            { "x": 0.58, "y": 0.52 },
+            { "x": 0.52, "y": 0.66 },
+            { "x": 0.43, "y": 0.76 },
+            { "x": 0.28, "y": 0.76 },
+            { "x": 0.18, "y": 0.65 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.58, "y": 0.34 },
+            { "x": 0.59, "y": 0.35 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.69, "y": 0.27 },
+            { "x": 0.70, "y": 0.28 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.80, "y": 0.34 },
+            { "x": 0.81, "y": 0.35 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "saad",
+      "glyph": "ص",
+      "nameGerman": "Ṣād",
+      "nameArabic": "صَاد",
+      "transliteration": "ṣād",
+      "phoneme": "emphatisches /sˤ/",
+      "phonemeSpeechText": "صَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ص",
+        "initial": "صـ",
+        "medial": "ـصـ",
+        "final": "ـص"
+      },
+      "confusableIDs": ["saad", "daad", "sin"],
+      "memoryHintGerman": "Ṣād hat eine geschlossene Schlaufe mit Zahn und keinen Punkt.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.83, "y": 0.55 },
+            { "x": 0.74, "y": 0.42 },
+            { "x": 0.60, "y": 0.42 },
+            { "x": 0.53, "y": 0.54 },
+            { "x": 0.61, "y": 0.63 },
+            { "x": 0.79, "y": 0.62 },
+            { "x": 0.68, "y": 0.72 },
+            { "x": 0.48, "y": 0.77 },
+            { "x": 0.28, "y": 0.74 },
+            { "x": 0.18, "y": 0.62 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "daad",
+      "glyph": "ض",
+      "nameGerman": "Ḍād",
+      "nameArabic": "ضَاد",
+      "transliteration": "ḍād",
+      "phoneme": "emphatisches /dˤ/",
+      "phonemeSpeechText": "ضَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ض",
+        "initial": "ضـ",
+        "medial": "ـضـ",
+        "final": "ـض"
+      },
+      "confusableIDs": ["daad", "saad", "dal"],
+      "memoryHintGerman": "Ḍād sieht wie Ṣād mit einem Punkt darüber aus.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.83, "y": 0.58 },
+            { "x": 0.74, "y": 0.45 },
+            { "x": 0.60, "y": 0.45 },
+            { "x": 0.53, "y": 0.57 },
+            { "x": 0.61, "y": 0.66 },
+            { "x": 0.79, "y": 0.65 },
+            { "x": 0.68, "y": 0.75 },
+            { "x": 0.48, "y": 0.80 },
+            { "x": 0.28, "y": 0.77 },
+            { "x": 0.18, "y": 0.65 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.67, "y": 0.29 },
+            { "x": 0.68, "y": 0.30 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ttaa",
+      "glyph": "ط",
+      "nameGerman": "Ṭāʾ",
+      "nameArabic": "طَاء",
+      "transliteration": "ṭāʾ",
+      "phoneme": "emphatisches /tˤ/",
+      "phonemeSpeechText": "طَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ط",
+        "initial": "طـ",
+        "medial": "ـطـ",
+        "final": "ـط"
+      },
+      "confusableIDs": ["ttaa", "zzaa", "taa"],
+      "memoryHintGerman": "Ṭāʾ hat eine runde Form mit senkrechtem Strich und keinen Punkt.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.82, "y": 0.61 },
+            { "x": 0.73, "y": 0.47 },
+            { "x": 0.59, "y": 0.46 },
+            { "x": 0.50, "y": 0.58 },
+            { "x": 0.58, "y": 0.68 },
+            { "x": 0.77, "y": 0.68 },
+            { "x": 0.49, "y": 0.71 },
+            { "x": 0.25, "y": 0.70 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.59, "y": 0.18 },
+            { "x": 0.58, "y": 0.65 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zzaa",
+      "glyph": "ظ",
+      "nameGerman": "Ẓāʾ",
+      "nameArabic": "ظَاء",
+      "transliteration": "ẓāʾ",
+      "phoneme": "emphatisches /ðˤ/",
+      "phonemeSpeechText": "ظَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ظ",
+        "initial": "ظـ",
+        "medial": "ـظـ",
+        "final": "ـظ"
+      },
+      "confusableIDs": ["zzaa", "ttaa", "dhal"],
+      "memoryHintGerman": "Ẓāʾ sieht wie Ṭāʾ mit einem Punkt darüber aus. Im Syrischen klingt es meist ähnlich wie Ḍād.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.82, "y": 0.63 },
+            { "x": 0.73, "y": 0.49 },
+            { "x": 0.59, "y": 0.48 },
+            { "x": 0.50, "y": 0.60 },
+            { "x": 0.58, "y": 0.70 },
+            { "x": 0.77, "y": 0.70 },
+            { "x": 0.49, "y": 0.73 },
+            { "x": 0.25, "y": 0.72 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.59, "y": 0.21 },
+            { "x": 0.58, "y": 0.67 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.69, "y": 0.29 },
+            { "x": 0.70, "y": 0.30 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ayn",
+      "glyph": "ع",
+      "nameGerman": "ʿAyn",
+      "nameArabic": "عَيْن",
+      "transliteration": "ʿayn",
+      "phoneme": "/ʕ/, ein stimmhafter Rachenlaut",
+      "phonemeSpeechText": "عَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ع",
+        "initial": "عـ",
+        "medial": "ـعـ",
+        "final": "ـع"
+      },
+      "confusableIDs": ["ayn", "ghayn", "faa"],
+      "memoryHintGerman": "ʿAyn hat einen offenen Haken ohne Punkt.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.70, "y": 0.31 },
+            { "x": 0.55, "y": 0.29 },
+            { "x": 0.44, "y": 0.39 },
+            { "x": 0.53, "y": 0.49 },
+            { "x": 0.68, "y": 0.49 },
+            { "x": 0.62, "y": 0.61 },
+            { "x": 0.52, "y": 0.73 },
+            { "x": 0.35, "y": 0.82 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ghayn",
+      "glyph": "غ",
+      "nameGerman": "Ghayn",
+      "nameArabic": "غَيْن",
+      "transliteration": "ghayn",
+      "phoneme": "/ɣ/, ähnlich dem französischen r",
+      "phonemeSpeechText": "غَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "غ",
+        "initial": "غـ",
+        "medial": "ـغـ",
+        "final": "ـغ"
+      },
+      "confusableIDs": ["ghayn", "ayn", "qaf"],
+      "memoryHintGerman": "Ghayn sieht wie ʿAyn mit einem Punkt darüber aus.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.70, "y": 0.35 },
+            { "x": 0.55, "y": 0.33 },
+            { "x": 0.44, "y": 0.43 },
+            { "x": 0.53, "y": 0.53 },
+            { "x": 0.68, "y": 0.53 },
+            { "x": 0.62, "y": 0.65 },
+            { "x": 0.52, "y": 0.76 },
+            { "x": 0.35, "y": 0.84 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.57, "y": 0.21 },
+            { "x": 0.58, "y": 0.22 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faa",
+      "glyph": "ف",
+      "nameGerman": "Fāʾ",
+      "nameArabic": "فَاء",
+      "transliteration": "fāʾ",
+      "phoneme": "/f/",
+      "phonemeSpeechText": "فَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ف",
+        "initial": "فـ",
+        "medial": "ـفـ",
+        "final": "ـف"
+      },
+      "confusableIDs": ["faa", "qaf", "ayn"],
+      "memoryHintGerman": "Fāʾ hat eine kleine Rundung mit einem Punkt darüber.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.69, "y": 0.38 },
+            { "x": 0.78, "y": 0.45 },
+            { "x": 0.75, "y": 0.56 },
+            { "x": 0.64, "y": 0.59 },
+            { "x": 0.56, "y": 0.51 },
+            { "x": 0.61, "y": 0.41 },
+            { "x": 0.72, "y": 0.43 },
+            { "x": 0.63, "y": 0.65 },
+            { "x": 0.43, "y": 0.72 },
+            { "x": 0.22, "y": 0.68 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.67, "y": 0.25 },
+            { "x": 0.68, "y": 0.26 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qaf",
+      "glyph": "ق",
+      "nameGerman": "Qāf",
+      "nameArabic": "قَاف",
+      "transliteration": "qāf",
+      "phoneme": "/q/, ein weit hinten gebildetes k",
+      "phonemeSpeechText": "قَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ق",
+        "initial": "قـ",
+        "medial": "ـقـ",
+        "final": "ـق"
+      },
+      "confusableIDs": ["qaf", "faa", "ghayn"],
+      "memoryHintGerman": "Qāf hat eine Rundung mit zwei Punkten darüber. Im städtischen Syrisch klingt es oft wie ein Knacklaut.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.70, "y": 0.40 },
+            { "x": 0.79, "y": 0.47 },
+            { "x": 0.76, "y": 0.58 },
+            { "x": 0.65, "y": 0.61 },
+            { "x": 0.57, "y": 0.53 },
+            { "x": 0.62, "y": 0.43 },
+            { "x": 0.73, "y": 0.45 },
+            { "x": 0.72, "y": 0.66 },
+            { "x": 0.63, "y": 0.79 },
+            { "x": 0.45, "y": 0.84 },
+            { "x": 0.28, "y": 0.77 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.64, "y": 0.26 },
+            { "x": 0.65, "y": 0.27 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.76, "y": 0.26 },
+            { "x": 0.77, "y": 0.27 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kaf",
+      "glyph": "ك",
+      "nameGerman": "Kāf",
+      "nameArabic": "كَاف",
+      "transliteration": "kāf",
+      "phoneme": "/k/",
+      "phonemeSpeechText": "كَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ك",
+        "initial": "كـ",
+        "medial": "ـكـ",
+        "final": "ـك"
+      },
+      "confusableIDs": ["kaf", "lam", "alif"],
+      "memoryHintGerman": "Kāf hat einen hohen Strich und einen kleinen Haken im Inneren.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.72, "y": 0.17 },
+            { "x": 0.71, "y": 0.64 },
+            { "x": 0.60, "y": 0.73 },
+            { "x": 0.42, "y": 0.75 },
+            { "x": 0.25, "y": 0.68 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.67, "y": 0.40 },
+            { "x": 0.51, "y": 0.51 },
+            { "x": 0.64, "y": 0.58 },
+            { "x": 0.48, "y": 0.61 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lam",
+      "glyph": "ل",
+      "nameGerman": "Lām",
+      "nameArabic": "لَام",
+      "transliteration": "lām",
+      "phoneme": "/l/",
+      "phonemeSpeechText": "لَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ل",
+        "initial": "لـ",
+        "medial": "ـلـ",
+        "final": "ـل"
+      },
+      "confusableIDs": ["lam", "kaf", "alif"],
+      "memoryHintGerman": "Lām beginnt hoch und läuft unter der Schreiblinie nach links aus.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.64, "y": 0.15 },
+            { "x": 0.63, "y": 0.39 },
+            { "x": 0.62, "y": 0.64 },
+            { "x": 0.55, "y": 0.78 },
+            { "x": 0.39, "y": 0.83 },
+            { "x": 0.25, "y": 0.75 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mim",
+      "glyph": "م",
+      "nameGerman": "Mīm",
+      "nameArabic": "مِيم",
+      "transliteration": "mīm",
+      "phoneme": "/m/",
+      "phonemeSpeechText": "مَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "م",
+        "initial": "مـ",
+        "medial": "ـمـ",
+        "final": "ـم"
+      },
+      "confusableIDs": ["mim", "waw", "faa"],
+      "memoryHintGerman": "Mīm hat einen kleinen runden Knoten mit einem langen Auslauf.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.69, "y": 0.39 },
+            { "x": 0.77, "y": 0.48 },
+            { "x": 0.70, "y": 0.58 },
+            { "x": 0.58, "y": 0.55 },
+            { "x": 0.58, "y": 0.43 },
+            { "x": 0.69, "y": 0.39 },
+            { "x": 0.58, "y": 0.59 },
+            { "x": 0.52, "y": 0.78 },
+            { "x": 0.39, "y": 0.86 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "nun",
+      "glyph": "ن",
+      "nameGerman": "Nūn",
+      "nameArabic": "نُون",
+      "transliteration": "nūn",
+      "phoneme": "/n/",
+      "phonemeSpeechText": "نَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ن",
+        "initial": "نـ",
+        "medial": "ـنـ",
+        "final": "ـن"
+      },
+      "confusableIDs": ["nun", "baa", "yaa"],
+      "memoryHintGerman": "Nūn hat einen Punkt über einer tieferen Schale.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.79, "y": 0.51 },
+            { "x": 0.76, "y": 0.69 },
+            { "x": 0.63, "y": 0.80 },
+            { "x": 0.44, "y": 0.81 },
+            { "x": 0.28, "y": 0.71 },
+            { "x": 0.24, "y": 0.53 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.52, "y": 0.38 },
+            { "x": 0.53, "y": 0.39 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hah",
+      "glyph": "ه",
+      "nameGerman": "Hāʾ",
+      "nameArabic": "هَاء",
+      "transliteration": "hāʾ",
+      "phoneme": "/h/ wie deutsches h",
+      "phonemeSpeechText": "هَ",
+      "joinsFollowing": true,
+      "forms": {
+        "isolated": "ه",
+        "initial": "هـ",
+        "medial": "ـهـ",
+        "final": "ـه"
+      },
+      "confusableIDs": ["hah", "ayn", "waw"],
+      "memoryHintGerman": "Hāʾ bildet eine runde Schleife und verändert seine Form je nach Position deutlich.",
+      "strokePaths": [
+        {
+          "points": [
+            { "x": 0.67, "y": 0.37 },
+            { "x": 0.77, "y": 0.45 },
+            { "x": 0.72, "y": 0.57 },
+            { "x": 0.60, "y": 0.60 },
+            { "x": 0.51, "y": 0.51 },
+            { "x": 0.57, "y": 0.40 },
+            { "x": 0.69, "y": 0.43 },
+            { "x": 0.57, "y": 0.61 },
+            { "x": 0.45, "y": 0.70 },
+            { "x": 0.31, "y": 0.64 }
           ]
         }
       ]
@@ -253,11 +989,7 @@
         "isolated": "و",
         "final": "ـو"
       },
-      "confusableIDs": [
-        "waw",
-        "raa",
-        "dal"
-      ],
+      "confusableIDs": ["waw", "mim", "hah"],
       "memoryHintGerman": "Wāw hat eine kleine Schleife und verbindet sich nicht mit dem folgenden Buchstaben.",
       "strokePaths": [
         {
@@ -282,41 +1014,45 @@
       ]
     },
     {
-      "id": "nun",
-      "glyph": "ن",
-      "nameGerman": "Nūn",
-      "nameArabic": "نُون",
-      "transliteration": "nūn",
-      "phoneme": "/n/",
-      "phonemeSpeechText": "نَ",
+      "id": "yaa",
+      "glyph": "ي",
+      "nameGerman": "Yāʾ",
+      "nameArabic": "يَاء",
+      "transliteration": "yāʾ",
+      "phoneme": "/j/ wie deutsches j oder langer Vokal /iː/",
+      "phonemeSpeechText": "يَ",
       "joinsFollowing": true,
       "forms": {
-        "isolated": "ن",
-        "initial": "نـ",
-        "medial": "ـنـ",
-        "final": "ـن"
+        "isolated": "ي",
+        "initial": "يـ",
+        "medial": "ـيـ",
+        "final": "ـي"
       },
-      "confusableIDs": [
-        "baa",
-        "taa",
-        "nun"
-      ],
-      "memoryHintGerman": "Nūn hat einen Punkt über einer tieferen Schale.",
+      "confusableIDs": ["yaa", "baa", "nun"],
+      "memoryHintGerman": "Yāʾ hat in der Wortmitte zwei Punkte darunter und am Wortende eine lange Unterlänge.",
       "strokePaths": [
         {
           "points": [
-            { "x": 0.79, "y": 0.51 },
-            { "x": 0.76, "y": 0.69 },
-            { "x": 0.63, "y": 0.80 },
-            { "x": 0.44, "y": 0.81 },
-            { "x": 0.28, "y": 0.71 },
-            { "x": 0.24, "y": 0.53 }
+            { "x": 0.76, "y": 0.45 },
+            { "x": 0.75, "y": 0.59 },
+            { "x": 0.66, "y": 0.71 },
+            { "x": 0.51, "y": 0.79 },
+            { "x": 0.34, "y": 0.78 },
+            { "x": 0.25, "y": 0.68 },
+            { "x": 0.37, "y": 0.61 },
+            { "x": 0.55, "y": 0.62 }
           ]
         },
         {
           "points": [
-            { "x": 0.52, "y": 0.38 },
-            { "x": 0.53, "y": 0.39 }
+            { "x": 0.43, "y": 0.89 },
+            { "x": 0.44, "y": 0.90 }
+          ]
+        },
+        {
+          "points": [
+            { "x": 0.56, "y": 0.89 },
+            { "x": 0.57, "y": 0.90 }
           ]
         }
       ]
@@ -333,35 +1069,8 @@
       "syrianText": "باب",
       "syrianTransliteration": "bāb",
       "bridgeNoteGerman": "Das Wort ist im Syrischen und in der Hochsprache fast gleich. In der Lernform zeigt Fatḥa den kurzen Vokal.",
-      "letterIDs": [
-        "baa",
-        "alif",
-        "baa"
-      ],
-      "focusLetterIDs": [
-        "baa",
-        "alif"
-      ]
-    },
-    {
-      "id": "dar",
-      "arabicVowelized": "دَار",
-      "arabicUnvowelized": "دار",
-      "german": "das Haus / Zuhause",
-      "msaTransliteration": "dār",
-      "msaSpeechText": "دَار",
-      "syrianText": "دار",
-      "syrianTransliteration": "dār",
-      "bridgeNoteGerman": "Dār ist in beiden Varianten verständlich. Nach Dāl und Alif beginnt jeweils eine neue Verbindung.",
-      "letterIDs": [
-        "dal",
-        "alif",
-        "raa"
-      ],
-      "focusLetterIDs": [
-        "dal",
-        "raa"
-      ]
+      "letterIDs": ["baa", "alif", "baa"],
+      "focusLetterIDs": ["baa", "alif"]
     },
     {
       "id": "bint",
@@ -373,15 +1082,8 @@
       "syrianText": "بنت",
       "syrianTransliteration": "bint",
       "bridgeNoteGerman": "Die Buchstabenfolge ist gleich. Kasra unter Bāʾ trägt hier den kurzen Vokal /i/.",
-      "letterIDs": [
-        "baa",
-        "nun",
-        "taa"
-      ],
-      "focusLetterIDs": [
-        "taa",
-        "nun"
-      ]
+      "letterIDs": ["baa", "nun", "taa"],
+      "focusLetterIDs": ["taa", "nun"]
     },
     {
       "id": "thawb",
@@ -393,15 +1095,177 @@
       "syrianText": "توب",
       "syrianTransliteration": "tōb",
       "bridgeNoteGerman": "In vielen syrischen Sprechweisen wird MSA /th/ hier zu /t/. Die MSA-Schreibung behält Thāʾ.",
-      "letterIDs": [
-        "thaa",
-        "waw",
-        "baa"
-      ],
-      "focusLetterIDs": [
-        "thaa",
-        "waw"
-      ]
+      "letterIDs": ["thaa", "waw", "baa"],
+      "focusLetterIDs": ["thaa", "waw"]
+    },
+    {
+      "id": "jamal",
+      "arabicVowelized": "جَمَل",
+      "arabicUnvowelized": "جمل",
+      "german": "das Kamel",
+      "msaTransliteration": "jamal",
+      "msaSpeechText": "جَمَل",
+      "syrianText": "جمل",
+      "syrianTransliteration": "žamal",
+      "bridgeNoteGerman": "Die Schreibweise bleibt gleich. Im städtischen Syrisch klingt Dschīm häufig wie das französische j.",
+      "letterIDs": ["jim", "mim", "lam"],
+      "focusLetterIDs": ["jim", "mim", "lam"]
+    },
+    {
+      "id": "hubb",
+      "arabicVowelized": "حُبّ",
+      "arabicUnvowelized": "حب",
+      "german": "die Liebe",
+      "msaTransliteration": "ḥubb",
+      "msaSpeechText": "حُبّ",
+      "syrianText": "حبّ",
+      "syrianTransliteration": "ḥubb",
+      "bridgeNoteGerman": "Das Wort und der kräftige Rachenlaut Ḥāʾ bleiben im Syrischen sehr ähnlich.",
+      "letterIDs": ["haa", "baa"],
+      "focusLetterIDs": ["haa"]
+    },
+    {
+      "id": "khubz",
+      "arabicVowelized": "خُبْز",
+      "arabicUnvowelized": "خبز",
+      "german": "das Brot",
+      "msaTransliteration": "khubz",
+      "msaSpeechText": "خُبْز",
+      "syrianText": "خبز",
+      "syrianTransliteration": "khobez",
+      "bridgeNoteGerman": "Im Syrischen wird das Wort oft khobez gesprochen; Khāʾ und Zāy bleiben gut hörbar.",
+      "letterIDs": ["khaa", "baa", "zay"],
+      "focusLetterIDs": ["khaa", "zay"]
+    },
+    {
+      "id": "dar",
+      "arabicVowelized": "دَار",
+      "arabicUnvowelized": "دار",
+      "german": "das Haus / Zuhause",
+      "msaTransliteration": "dār",
+      "msaSpeechText": "دَار",
+      "syrianText": "دار",
+      "syrianTransliteration": "dār",
+      "bridgeNoteGerman": "Dār ist in beiden Varianten verständlich. Nach Dāl und Alif beginnt jeweils eine neue Verbindung.",
+      "letterIDs": ["dal", "alif", "raa"],
+      "focusLetterIDs": ["dal", "raa"]
+    },
+    {
+      "id": "dhahab",
+      "arabicVowelized": "ذَهَب",
+      "arabicUnvowelized": "ذهب",
+      "german": "das Gold",
+      "msaTransliteration": "dhahab",
+      "msaSpeechText": "ذَهَب",
+      "syrianText": "دهب",
+      "syrianTransliteration": "dahab",
+      "bridgeNoteGerman": "Im syrischen Alltag wird Dhāl hier meist wie /d/ gesprochen und oft entsprechend als Dāl geschrieben.",
+      "letterIDs": ["dhal", "hah", "baa"],
+      "focusLetterIDs": ["dhal", "hah"]
+    },
+    {
+      "id": "samak",
+      "arabicVowelized": "سَمَك",
+      "arabicUnvowelized": "سمك",
+      "german": "der Fisch",
+      "msaTransliteration": "samak",
+      "msaSpeechText": "سَمَك",
+      "syrianText": "سمك",
+      "syrianTransliteration": "samak",
+      "bridgeNoteGerman": "Das Wort ist im Syrischen und in der Hochsprache sehr ähnlich.",
+      "letterIDs": ["sin", "mim", "kaf"],
+      "focusLetterIDs": ["sin", "kaf"]
+    },
+    {
+      "id": "shams",
+      "arabicVowelized": "شَمْس",
+      "arabicUnvowelized": "شمس",
+      "german": "die Sonne",
+      "msaTransliteration": "shams",
+      "msaSpeechText": "شَمْس",
+      "syrianText": "شمس",
+      "syrianTransliteration": "shams",
+      "bridgeNoteGerman": "Schreibweise und Aussprache liegen in beiden Varianten nah beieinander.",
+      "letterIDs": ["shin", "mim", "sin"],
+      "focusLetterIDs": ["shin"]
+    },
+    {
+      "id": "sabah",
+      "arabicVowelized": "صَبَاح",
+      "arabicUnvowelized": "صباح",
+      "german": "der Morgen",
+      "msaTransliteration": "ṣabāḥ",
+      "msaSpeechText": "صَبَاح",
+      "syrianText": "صباح",
+      "syrianTransliteration": "ṣabāḥ",
+      "bridgeNoteGerman": "Ṣabāḥ ist auch in syrischen Morgengrüßen vertraut. Das emphatische Ṣād bleibt erhalten.",
+      "letterIDs": ["saad", "baa", "alif", "haa"],
+      "focusLetterIDs": ["saad"]
+    },
+    {
+      "id": "dayf",
+      "arabicVowelized": "ضَيْف",
+      "arabicUnvowelized": "ضيف",
+      "german": "der Gast",
+      "msaTransliteration": "ḍayf",
+      "msaSpeechText": "ضَيْف",
+      "syrianText": "ضيف",
+      "syrianTransliteration": "ḍēf",
+      "bridgeNoteGerman": "Im Syrischen wird der Doppellaut häufig zu ē. Die Buchstabenfolge bleibt gleich.",
+      "letterIDs": ["daad", "yaa", "faa"],
+      "focusLetterIDs": ["daad", "yaa", "faa"]
+    },
+    {
+      "id": "taam",
+      "arabicVowelized": "طَعَام",
+      "arabicUnvowelized": "طعام",
+      "german": "das Essen",
+      "msaTransliteration": "ṭaʿām",
+      "msaSpeechText": "طَعَام",
+      "syrianText": "أكل",
+      "syrianTransliteration": "akel",
+      "bridgeNoteGerman": "Ṭaʿām ist hochsprachlich. Im syrischen Alltag hörst du für Essen häufiger akel.",
+      "letterIDs": ["ttaa", "ayn", "alif", "mim"],
+      "focusLetterIDs": ["ttaa", "ayn"]
+    },
+    {
+      "id": "zill",
+      "arabicVowelized": "ظِلّ",
+      "arabicUnvowelized": "ظل",
+      "german": "der Schatten",
+      "msaTransliteration": "ẓill",
+      "msaSpeechText": "ظِلّ",
+      "syrianText": "فَيّ",
+      "syrianTransliteration": "fayy",
+      "bridgeNoteGerman": "Für Schatten hörst du im syrischen Alltag oft fayy. Die Hochsprache verwendet ẓill mit Ẓāʾ.",
+      "letterIDs": ["zzaa", "lam"],
+      "focusLetterIDs": ["zzaa"]
+    },
+    {
+      "id": "ghurab",
+      "arabicVowelized": "غُرَاب",
+      "arabicUnvowelized": "غراب",
+      "german": "die Krähe",
+      "msaTransliteration": "ghurāb",
+      "msaSpeechText": "غُرَاب",
+      "syrianText": "غراب",
+      "syrianTransliteration": "ghrāb",
+      "bridgeNoteGerman": "Im Syrischen fällt der kurze Vokal oft weg; Ghayn und die Schreibweise bleiben deutlich.",
+      "letterIDs": ["ghayn", "raa", "alif", "baa"],
+      "focusLetterIDs": ["ghayn"]
+    },
+    {
+      "id": "qalam",
+      "arabicVowelized": "قَلَم",
+      "arabicUnvowelized": "قلم",
+      "german": "der Stift",
+      "msaTransliteration": "qalam",
+      "msaSpeechText": "قَلَم",
+      "syrianText": "قلم",
+      "syrianTransliteration": "ʾalam",
+      "bridgeNoteGerman": "In vielen syrischen Städten wird Qāf als Knacklaut gesprochen: Aus qalam wird ungefähr ʾalam.",
+      "letterIDs": ["qaf", "lam", "mim"],
+      "focusLetterIDs": ["qaf"]
     },
     {
       "id": "nur",
@@ -413,16 +1277,8 @@
       "syrianText": "نور",
       "syrianTransliteration": "nūr",
       "bridgeNoteGerman": "Das Wort ist sehr nah. Ḍamma auf Nūn plus Wāw ergibt hier den langen Vokal /uː/.",
-      "letterIDs": [
-        "nun",
-        "waw",
-        "raa"
-      ],
-      "focusLetterIDs": [
-        "nun",
-        "waw",
-        "raa"
-      ]
+      "letterIDs": ["nun", "waw", "raa"],
+      "focusLetterIDs": ["nun", "waw", "raa"]
     }
   ]
 }

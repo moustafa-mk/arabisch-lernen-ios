@@ -1,36 +1,36 @@
 import Foundation
 
-struct PilotLetterProgress: Equatable, Sendable {
+struct AlphabetLetterProgress: Equatable, Sendable {
     let exposureCount: Int
     let mastery: Double
     let nextReviewAt: Date
 }
 
-enum PilotProgressPolicy {
-    static func hasCompletedLesson(_ progress: PilotLetterProgress?) -> Bool {
+enum AlphabetProgressPolicy {
+    static func hasCompletedLesson(_ progress: AlphabetLetterProgress?) -> Bool {
         (progress?.exposureCount ?? 0) > 0
     }
 
     static func completedCount(
-        pilotOrder: [String],
-        progressByID: [String: PilotLetterProgress]
+        alphabetOrder: [String],
+        progressByID: [String: AlphabetLetterProgress]
     ) -> Int {
-        pilotOrder.filter { hasCompletedLesson(progressByID[$0]) }.count
+        alphabetOrder.filter { hasCompletedLesson(progressByID[$0]) }.count
     }
 
     static func recommendedLetterID(
-        pilotOrder: [String],
-        progressByID: [String: PilotLetterProgress],
+        alphabetOrder: [String],
+        progressByID: [String: AlphabetLetterProgress],
         now: Date
     ) -> String? {
-        let unpracticedID = pilotOrder.first {
+        let unpracticedID = alphabetOrder.first {
             !hasCompletedLesson(progressByID[$0])
         }
         if let unpracticedID {
             return unpracticedID
         }
 
-        let dueID = pilotOrder.first {
+        let dueID = alphabetOrder.first {
             guard let progress = progressByID[$0] else {
                 return false
             }
@@ -40,8 +40,8 @@ enum PilotProgressPolicy {
             return dueID
         }
 
-        return pilotOrder.first {
+        return alphabetOrder.first {
             (progressByID[$0]?.mastery ?? 0) < 0.75
-        } ?? pilotOrder.first
+        } ?? alphabetOrder.first
     }
 }

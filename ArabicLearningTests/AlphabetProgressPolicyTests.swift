@@ -1,11 +1,11 @@
 import XCTest
 @testable import ArabicLearning
 
-final class PilotProgressPolicyTests: XCTestCase {
+final class AlphabetProgressPolicyTests: XCTestCase {
     func testFinishingLessonAdvancesToNextLetterWithoutRequiringMastery() {
         let now = Date(timeIntervalSince1970: 1_700_000_000)
         let progress = [
-            "baa": PilotLetterProgress(
+            "baa": AlphabetLetterProgress(
                 exposureCount: 1,
                 mastery: 0,
                 nextReviewAt: now.addingTimeInterval(-60)
@@ -13,15 +13,15 @@ final class PilotProgressPolicyTests: XCTestCase {
         ]
 
         XCTAssertEqual(
-            PilotProgressPolicy.completedCount(
-                pilotOrder: ["baa", "taa", "thaa"],
+            AlphabetProgressPolicy.completedCount(
+                alphabetOrder: ["baa", "taa", "thaa"],
                 progressByID: progress
             ),
             1
         )
         XCTAssertEqual(
-            PilotProgressPolicy.recommendedLetterID(
-                pilotOrder: ["baa", "taa", "thaa"],
+            AlphabetProgressPolicy.recommendedLetterID(
+                alphabetOrder: ["baa", "taa", "thaa"],
                 progressByID: progress,
                 now: now
             ),
@@ -32,12 +32,12 @@ final class PilotProgressPolicyTests: XCTestCase {
     func testDueReviewIsRecommendedAfterAllLettersWereIntroduced() {
         let now = Date(timeIntervalSince1970: 1_700_000_000)
         let progress = [
-            "baa": PilotLetterProgress(
+            "baa": AlphabetLetterProgress(
                 exposureCount: 1,
                 mastery: 0,
                 nextReviewAt: now.addingTimeInterval(-60)
             ),
-            "taa": PilotLetterProgress(
+            "taa": AlphabetLetterProgress(
                 exposureCount: 1,
                 mastery: 1,
                 nextReviewAt: now.addingTimeInterval(86_400)
@@ -45,8 +45,8 @@ final class PilotProgressPolicyTests: XCTestCase {
         ]
 
         XCTAssertEqual(
-            PilotProgressPolicy.recommendedLetterID(
-                pilotOrder: ["baa", "taa"],
+            AlphabetProgressPolicy.recommendedLetterID(
+                alphabetOrder: ["baa", "taa"],
                 progressByID: progress,
                 now: now
             ),
