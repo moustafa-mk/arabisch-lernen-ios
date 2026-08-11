@@ -361,7 +361,8 @@ enum PracticeSheetRenderer {
                 kind: kind,
                 profile: profile,
                 top: 288 + CGFloat(index) * 66,
-                font: fonts.arabicPractice,
+                arabicFont: fonts.arabicPractice,
+                labelFont: fonts.small,
                 context: context
             )
         }
@@ -372,7 +373,8 @@ enum PracticeSheetRenderer {
         kind: LetterFormKind,
         profile: ArabicFormBaselineProfile,
         top: CGFloat,
-        font: UIFont,
+        arabicFont: UIFont,
+        labelFont: UIFont,
         context: CGContext
     ) {
         let row = CGRect(
@@ -388,7 +390,7 @@ enum PracticeSheetRenderer {
         drawText(
             kind.label,
             in: CGRect(x: row.minX + 7, y: row.minY + 20, width: labelWidth - 14, height: 18),
-            font: fonts.small,
+            font: labelFont,
             color: Palette.muted,
             alignment: .center
         )
@@ -422,7 +424,7 @@ enum PracticeSheetRenderer {
                 glyph,
                 centeredAtX: centerX,
                 baselineY: baselineY,
-                font: font,
+                font: arabicFont,
                 color: Palette.trace,
                 context: context
             )
