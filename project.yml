@@ -27,10 +27,14 @@ targets:
         buildPhase: resources
       - path: ArabicLearningApp/Resources/Curriculum.json
         buildPhase: resources
+      - path: ArabicLearningApp/Resources/Fonts
+        buildPhase: resources
     info:
       path: ArabicLearningApp/Resources/Info.plist
       properties:
         CFBundleDisplayName: Arabisch Lernen
+        UIAppFonts:
+          - NotoNaskhArabic-Variable.ttf
         UILaunchScreen:
           UIColorName: LaunchBackground
         UISupportedInterfaceOrientations:

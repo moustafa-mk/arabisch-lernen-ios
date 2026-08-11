@@ -45,25 +45,61 @@ struct LetterForms: Codable, Hashable, Sendable {
     let final: String?
 
     var labelledForms: [LabelledLetterForm] {
-        var result = [LabelledLetterForm(label: "Allein", glyph: isolated)]
+        var result = [LabelledLetterForm(kind: .isolated, glyph: isolated)]
         if let initial {
-            result.append(LabelledLetterForm(label: "Am Anfang", glyph: initial))
+            result.append(LabelledLetterForm(kind: .initial, glyph: initial))
         }
         if let medial {
-            result.append(LabelledLetterForm(label: "In der Mitte", glyph: medial))
+            result.append(LabelledLetterForm(kind: .medial, glyph: medial))
         }
         if let final {
-            result.append(LabelledLetterForm(label: "Am Ende", glyph: final))
+            result.append(LabelledLetterForm(kind: .final, glyph: final))
         }
         return result
+    }
+
+    func glyph(for kind: LetterFormKind) -> String? {
+        switch kind {
+        case .isolated:
+            return isolated
+        case .initial:
+            return initial
+        case .medial:
+            return medial
+        case .final:
+            return final
+        }
+    }
+}
+
+enum LetterFormKind: String, CaseIterable, Codable, Hashable, Identifiable, Sendable {
+    case isolated
+    case initial
+    case medial
+    case final
+
+    var id: String { rawValue }
+
+    var label: String {
+        switch self {
+        case .isolated:
+            return "allein"
+        case .initial:
+            return "am Anfang"
+        case .medial:
+            return "in der Mitte"
+        case .final:
+            return "am Ende"
+        }
     }
 }
 
 struct LabelledLetterForm: Identifiable, Hashable, Sendable {
-    let label: String
+    let kind: LetterFormKind
     let glyph: String
 
-    var id: String { label }
+    var id: LetterFormKind { kind }
+    var label: String { kind.label }
 }
 
 struct StrokePath: Codable, Hashable, Sendable {
